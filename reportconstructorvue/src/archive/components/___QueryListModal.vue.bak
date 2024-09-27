@@ -1,0 +1,102 @@
+﻿<script>
+    import Modal from '../modals/Modal.vue';
+    import QueryUpdateModal from './QueryUpdateModal.vue';
+
+    export default {
+        props: ['initialModel', 'searchIndex'],
+        data() {
+            return {
+                queries: [
+                    {
+                        Id: 1,
+                        Name: 'Query_1',
+                        Comment: '..comment..'
+                    }
+                ],
+                selectedQuery: -1,
+                showQueryDialog: false,
+                showQueryConfigDialog: false
+            };
+        },
+        components: {
+            Modal: Modal,
+            QueryUpdateModal: QueryUpdateModal
+        },
+        emits: ['query-add', 'query-edit', 'modal-closed'],
+        methods: {
+            save() {
+                let form = this.$refs.form;
+                
+                if (form.checkValidity()) {
+
+                    if (this.searchIndex == -1) {
+                        this.$emit('query-add', {
+
+                        });
+                    } else {
+                        this.$emit('query-edit',
+                            {
+
+                            },
+                            this.searchIndex
+                        );
+                    }
+                } else {
+                    form.reportValidity();
+                }
+            },
+            close() {
+                this.$emit('modal-closed');
+            },
+            queryAdd() {
+
+                this.showQueryDialog = true;
+            },
+            getInitialModel() {
+
+                return this.selectedQuery == -1 ? {} : this.queries[this.selectedQuery];
+            }
+        }
+    };
+
+
+</script>
+
+<template>
+    <modal>
+        <template v-slot:header>
+            Queries:
+        </template>
+        <template v-slot:body>
+            <form ref="form">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id</th><th>Name</th><th>Comment</th><th></th><th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(query, i) in queries">
+                            <td>{{query.Id}}</td>
+                            <td>{{query.Name}}</td>
+                            <td>{{query.Comment}}</td>
+                            <td><button v-on:click="" type="button">Configure</button></td>
+                            <td><button v-on:click="" type="button">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td><td><button v-on:click="queryAdd" type="button">Add</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </template>
+
+        <template v-slot:footer>
+            <button v-on:click="close">Close</button>
+            <button v-on:click="save">Save</button>
+        </template>
+    </modal>
+    <query-update-modal v-if="showQueryDialog" v-bind:initial-model="getInitialModel" v-on:query-add="onQueryAdd" v-on:query-edit="onQueryEdit" v-on:modal-closed="(e) => showQueryDialog = false">
+
+    </query-update-modal>
+</template>

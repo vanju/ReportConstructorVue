@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "reportconstructorvue", "ReportConstructorVue\reportconstructorvue.esproj", "{C9D0B518-358F-4CCC-A9E6-0AE0AC4BDEB9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9D0B518-358F-4CCC-A9E6-0AE0AC4BDEB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9D0B518-358F-4CCC-A9E6-0AE0AC4BDEB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9D0B518-358F-4CCC-A9E6-0AE0AC4BDEB9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C9D0B518-358F-4CCC-A9E6-0AE0AC4BDEB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9D0B518-358F-4CCC-A9E6-0AE0AC4BDEB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9D0B518-358F-4CCC-A9E6-0AE0AC4BDEB9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0CCC666-8E35-45A7-BB86-DF60E13AC0C0}
+	EndGlobalSection
+EndGlobal

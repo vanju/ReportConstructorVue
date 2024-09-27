@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Vue</title>
+  </head>
+  <body>
+
+      <div class="header">
+          <h2 class="heading">Header</h2>
+      </div>
+      <div id="app" class="content">
+      </div>
+      <div class="footer">
+          <h2 class="heading">Footer</h2>
+      </div>
+
+      <script type="module" src="/src/main.js"></script>
+
+      <style>
+
+          html {
+              font-size: 14px;
+          }
+
+              html * {
+                  box-sizing: border-box;
+              }
+
+          @media (min-width: 768px) {
+              html {
+                  font-size: 16px;
+              }
+          }
+
+          html {
+              height: 100%;
+          }
+
+          body {
+              display: flex;
+              flex-direction: column;
+              height: 100%;
+              margin: 0;
+              padding: 0;
+          }
+
+          /* page */
+          .header {
+              display: flex;
+              justify-content: center;
+              border-bottom: 1px solid green;
+          }
+
+          .content {
+              display: flex;
+              flex-direction: column;
+              flex: 1 1 auto;
+              overflow: auto;
+          }
+
+          .footer {
+              display: flex;
+              justify-content: center;
+              border-top: 1px solid green;
+          }
+      </style>
+  </body>
+</html>
